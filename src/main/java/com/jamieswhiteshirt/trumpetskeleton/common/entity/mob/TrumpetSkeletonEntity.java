@@ -10,6 +10,7 @@ import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.World;
@@ -42,9 +43,10 @@ public class TrumpetSkeletonEntity extends SkeletonEntity {
         return TrumpetSkeletonSoundEvents.ENTITY_TRUMPET_SKELETON_AMBIENT;
     }
 
+
     @Override
-    protected void initEquipment(LocalDifficulty localDifficulty_1) {
-        super.initEquipment(localDifficulty_1);
+    protected void initEquipment(Random random, LocalDifficulty localDifficulty_1) {
+        super.initEquipment(random, localDifficulty_1);
         this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(TrumpetSkeletonItems.TRUMPET));
     }
 

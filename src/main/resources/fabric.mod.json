@@ -2,18 +2,20 @@
   "schemaVersion": 1,
   "id": "trumpet-skeleton",
   "version": "${version}",
+
   "name": "Trumpet Skeleton",
   "description": "The sound of trumpets echoes through the night...",
   "authors": [
-    "JamiesWhiteShirt"
+    "Gr00ze"
   ],
   "contact": {
-    "sources": "https://github.com/JamiesWhiteShirt/trumpet-skeleton-fabric",
-    "issues": "https://github.com/JamiesWhiteShirt/trumpet-skeleton-fabric/issues",
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/trumpet-skeleton-fabric"
+    "homepage": "",
+    "sources": "https://github.com/Gr00ze/trumpet-skeleton-fabric-1.19.2"
   },
+
   "license": "MIT",
   "icon": "assets/trumpet-skeleton/icon.png",
+
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -26,8 +28,14 @@
   "mixins": [
     "mixins.trumpet-skeleton.json"
   ],
+
   "depends": {
-    "fabricloader": ">=0.7.0",
-    "fabric": "*"
+    "fabricloader": ">=0.14.17",
+    "fabric-api": "*",
+    "minecraft": "~1.19.2",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
   }
 }

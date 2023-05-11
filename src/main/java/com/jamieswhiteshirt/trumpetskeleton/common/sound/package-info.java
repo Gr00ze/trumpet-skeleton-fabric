@@ -1,4 +1,0 @@
-@ParametersAreNonnullByDefault
-package com.jamieswhiteshirt.trumpetskeleton.common.sound;
-
-import javax.annotation.ParametersAreNonnullByDefault;

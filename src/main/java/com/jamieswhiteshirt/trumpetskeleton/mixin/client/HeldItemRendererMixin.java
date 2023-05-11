@@ -35,7 +35,11 @@ public abstract class HeldItemRendererMixin {
         ),
         locals = LocalCapture.CAPTURE_FAILHARD
     )
-    private void renderFirstPersonItem(AbstractClientPlayerEntity player, float tickDelta, float pitch, Hand hand, float swingProgress, ItemStack item, float equipProgress, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci, Arm arm) {
+    private void renderFirstPersonItem(AbstractClientPlayerEntity player,
+                                       float tickDelta, float pitch, Hand hand,
+                                       float swingProgress, ItemStack item, float equipProgress,
+                                       MatrixStack matrices, VertexConsumerProvider vertexConsumers,
+                                       int light, CallbackInfo ci, boolean bl,  Arm arm) {
         if (item.getItem() == TrumpetSkeletonItems.TRUMPET) {
             applyEatOrDrinkTransformation(matrices, tickDelta, arm, item);
         }
