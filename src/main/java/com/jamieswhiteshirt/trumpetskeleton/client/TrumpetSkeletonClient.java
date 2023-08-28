@@ -7,7 +7,7 @@ import net.fabricmc.api.Environment;
 
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.entity.SkeletonEntityRenderer;
-import net.minecraft.util.registry.Registry;
+
 
 @Environment(EnvType.CLIENT)
 public class TrumpetSkeletonClient implements ClientModInitializer {

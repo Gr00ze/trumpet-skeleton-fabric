@@ -59,6 +59,7 @@ public class TrumpetSkeletonEntity extends SkeletonEntity {
 
     @Override
     public void updateAttackType() {
+        World world = getWorld();
         if (constructed && world != null && !world.isClient) {
             goalSelector.remove(meleeAttackGoal);
             goalSelector.remove(trumpetAttackGoal);

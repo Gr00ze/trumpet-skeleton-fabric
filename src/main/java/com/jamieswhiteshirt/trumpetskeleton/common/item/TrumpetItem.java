@@ -15,6 +15,7 @@ import net.minecraft.world.World;
 public class TrumpetItem extends Item {
     public TrumpetItem(Settings settings) {
         super(settings);
+
     }
 
     @Override

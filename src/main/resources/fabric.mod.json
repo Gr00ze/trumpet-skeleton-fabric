@@ -10,7 +10,7 @@
   ],
   "contact": {
     "homepage": "",
-    "sources": "https://github.com/Gr00ze/trumpet-skeleton-fabric-1.19.2"
+    "sources": "https://github.com/Gr00ze/trumpet-skeleton-fabric"
   },
 
   "license": "MIT",
@@ -32,7 +32,7 @@
   "depends": {
     "fabricloader": ">=0.14.17",
     "fabric-api": "*",
-    "minecraft": "~1.19.2",
+    "minecraft": "~1.20.1",
     "java": ">=17"
   },
   "suggests": {
