@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "trumpet-skeleton:items/trumpet"
+    "layer0": "trumpet-skeleton:item/trumpet"
   },
   "display": {
     "thirdperson_righthand": {
