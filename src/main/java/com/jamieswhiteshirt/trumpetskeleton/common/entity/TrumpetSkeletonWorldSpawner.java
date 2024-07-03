@@ -14,7 +14,7 @@ public class TrumpetSkeletonWorldSpawner {
                 BiomeSelectors.all(),
                 SpawnGroup.MONSTER,
                 TRUMPET_SKELETON,
-                100,
+                1,
                 1,
                 3
         );
