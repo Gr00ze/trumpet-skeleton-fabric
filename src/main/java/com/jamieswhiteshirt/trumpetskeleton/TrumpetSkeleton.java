@@ -25,7 +25,7 @@ public class TrumpetSkeleton implements ModInitializer {
     public static final Logger LOGGER = LogManager.getLogger("trumpet-skeleton");
     public static final String MOD_ID = "trumpet-skeleton";
 
-    public static double relativeSpawnWeight = 100D; //0.05D
+    public static double relativeSpawnWeight = 1D; //0.05D
 
     @Override
     public void onInitialize() {
@@ -33,7 +33,7 @@ public class TrumpetSkeleton implements ModInitializer {
         TrumpetSkeletonItems.init();
         TrumpetSkeletonSoundEvents.init();
         TrumpetSkeletonEntityTypes.init();
-        TrumpetSkeletonWorldSpawner.init();
+        //TrumpetSkeletonWorldSpawner.init();
 
         ParrotEntityAccessor.trumpetskeleton$getMobSounds().put(TrumpetSkeletonEntityTypes.TRUMPET_SKELETON, TrumpetSkeletonSoundEvents.ENTITY_PARROT_IMITATE_TRUMPET_SKELETON);
         SpawnRestrictionAccessor.trumpetskeleton$register(TrumpetSkeletonEntityTypes.TRUMPET_SKELETON, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
@@ -62,6 +62,7 @@ public class TrumpetSkeleton implements ModInitializer {
         String relativeSpawnRateString = configuration.getProperty("relativeSpawnWeight");
         try {
             relativeSpawnWeight = Double.parseDouble(relativeSpawnRateString);
+            System.out.print("CARICATO CONF: "+TrumpetSkeleton.relativeSpawnWeight);
         } catch (NumberFormatException e) {
             LOGGER.error("Error processing configuration file \"" + configurationFile + "\".");
             LOGGER.error("Expected configuration value for relativeSpawnWeight to be a number, found \"" + relativeSpawnRateString + "\".");

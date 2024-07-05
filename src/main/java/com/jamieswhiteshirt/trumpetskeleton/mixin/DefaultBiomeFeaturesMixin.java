@@ -13,12 +13,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(DefaultBiomeFeatures.class)
 public class DefaultBiomeFeaturesMixin {
     @Inject(
-        method = "addMonsters",
+        method = "addMonsters(Lnet/minecraft/world/biome/SpawnSettings$Builder;IIIZ)V",
         at = @At("TAIL")
     )
     private static void addMonsters(SpawnSettings.Builder builder, int zombieWeight, int zombieVillagerWeight, int skeletonWeight, boolean drowned, CallbackInfo ci) {
+        TrumpetSkeleton.LOGGER.info("Porco DIO");
         if (skeletonWeight > 0) {
             int weight = (int) Math.ceil(skeletonWeight * TrumpetSkeleton.relativeSpawnWeight);
+            System.out.print("MIXIN: CAICATO CONF: "+TrumpetSkeleton.relativeSpawnWeight);
             builder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(TrumpetSkeletonEntityTypes.TRUMPET_SKELETON, weight, 1, 1));
         }
     }
