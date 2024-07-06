@@ -1,9 +1,9 @@
 {
   "required": true,
   "package": "com.jamieswhiteshirt.trumpetskeleton.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_18",
   "mixins": [
-    "DefaultBiomeFeaturesMixin",
+
     "ParrotEntityAccessor",
     "SpawnRestrictionAccessor"
   ],

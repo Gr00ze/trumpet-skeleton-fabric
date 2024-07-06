@@ -40,6 +40,7 @@ public abstract class HeldItemRendererMixin {
                                        float swingProgress, ItemStack item, float equipProgress,
                                        MatrixStack matrices, VertexConsumerProvider vertexConsumers,
                                        int light, CallbackInfo ci, boolean bl,  Arm arm) {
+
         if (item.getItem() == TrumpetSkeletonItems.TRUMPET) {
             applyEatOrDrinkTransformation(matrices, tickDelta, arm, item);
         }
