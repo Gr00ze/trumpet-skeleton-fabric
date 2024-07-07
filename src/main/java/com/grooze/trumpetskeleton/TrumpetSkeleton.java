@@ -1,5 +1,9 @@
 package com.grooze.trumpetskeleton;
 
+import com.grooze.trumpetskeleton.entity.TrumpetSkeletonEntity;
+import com.grooze.trumpetskeleton.entity.TrumpetSkeletonEntityTypes;
+import com.grooze.trumpetskeleton.item.TrumpetSkeletonItems;
+import com.grooze.trumpetskeleton.sound.TrumpetSkeletonSoundEvents;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -18,6 +22,9 @@ public class TrumpetSkeleton implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Initializing");
+		TrumpetSkeletonSoundEvents.init();
+		TrumpetSkeletonItems.init();
+		TrumpetSkeletonEntityTypes.init();
 	}
 }
