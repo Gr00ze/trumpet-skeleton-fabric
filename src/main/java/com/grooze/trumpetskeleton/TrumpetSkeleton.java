@@ -4,10 +4,15 @@ import com.grooze.trumpetskeleton.biome.BiomeModifier;
 import com.grooze.trumpetskeleton.entity.TrumpetSkeletonEntityTypes;
 import com.grooze.trumpetskeleton.item.TrumpetSkeletonItems;
 import com.grooze.trumpetskeleton.mixin.ParrotEntityAccessor;
+import com.grooze.trumpetskeleton.mixin.SpawnRestrictionAccessor;
 import com.grooze.trumpetskeleton.sound.TrumpetSkeletonSoundEvents;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricLootTableProvider;
+import net.fabricmc.fabric.api.loot.v2.FabricLootTableBuilder;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.entity.mob.HostileEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,13 +23,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Properties;
 
+import static net.minecraft.entity.SpawnLocationTypes.ON_GROUND;
+import static net.minecraft.world.Heightmap.Type.MOTION_BLOCKING_NO_LEAVES;
+
 public class TrumpetSkeleton implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final String MOD_ID = "trumpet-skeleton";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static double relativeSpawnWeight = 1D;
+	public static double relativeSpawnWeight = 0.05D;
 
 	@Override
 	public void onInitialize() {
@@ -41,7 +49,11 @@ public class TrumpetSkeleton implements ModInitializer {
         assert ParrotEntityAccessor.trumpetskeleton$getMobSounds() != null;
         ParrotEntityAccessor.trumpetskeleton$getMobSounds().put(TrumpetSkeletonEntityTypes.TRUMPET_SKELETON, TrumpetSkeletonSoundEvents.ENTITY_PARROT_IMITATE_TRUMPET_SKELETON);
 
+		SpawnRestrictionAccessor.trumpetskeleton$register(TrumpetSkeletonEntityTypes.TRUMPET_SKELETON, ON_GROUND, MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
+
 		BiomeModifier.init();
+
+
 
 	}
 
