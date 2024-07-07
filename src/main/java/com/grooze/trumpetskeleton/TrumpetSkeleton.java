@@ -1,7 +1,6 @@
 package com.grooze.trumpetskeleton;
 
 import com.grooze.trumpetskeleton.biome.BiomeModifier;
-import com.grooze.trumpetskeleton.entity.TrumpetSkeletonEntity;
 import com.grooze.trumpetskeleton.entity.TrumpetSkeletonEntityTypes;
 import com.grooze.trumpetskeleton.item.TrumpetSkeletonItems;
 import com.grooze.trumpetskeleton.mixin.ParrotEntityAccessor;
@@ -39,7 +38,8 @@ public class TrumpetSkeleton implements ModInitializer {
 		TrumpetSkeletonItems.init();
 		TrumpetSkeletonEntityTypes.init();
 
-		ParrotEntityAccessor.trumpetskeleton$getMobSounds().put(TrumpetSkeletonEntityTypes.TRUMPET_SKELETON, TrumpetSkeletonSoundEvents.ENTITY_PARROT_IMITATE_TRUMPET_SKELETON);
+        assert ParrotEntityAccessor.trumpetskeleton$getMobSounds() != null;
+        ParrotEntityAccessor.trumpetskeleton$getMobSounds().put(TrumpetSkeletonEntityTypes.TRUMPET_SKELETON, TrumpetSkeletonSoundEvents.ENTITY_PARROT_IMITATE_TRUMPET_SKELETON);
 
 		BiomeModifier.init();
 
