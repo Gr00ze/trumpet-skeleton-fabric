@@ -1,4 +1,9 @@
+# 1.1.9
+- Renabled config
 
+# 1.1.8
+- Changed spawn system equally distributed on every biome
+- Disabled config
 
 # 1.1.5
 - Fork

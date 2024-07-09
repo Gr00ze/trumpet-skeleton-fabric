@@ -22,23 +22,29 @@ import java.nio.file.Path;
 import java.util.Properties;
 
 public class TrumpetSkeleton implements ModInitializer {
-    public static final Logger LOGGER = LogManager.getLogger("trumpet-skeleton");
     public static final String MOD_ID = "trumpet-skeleton";
+    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public static double relativeSpawnWeight = 0.05D;
 
     @Override
     public void onInitialize() {
 
+        setUpProperties();
+
         TrumpetSkeletonItems.init();
         TrumpetSkeletonSoundEvents.init();
         TrumpetSkeletonEntityTypes.init();
-
 
         ParrotEntityAccessor.trumpetskeleton$getMobSounds().put(TrumpetSkeletonEntityTypes.TRUMPET_SKELETON, TrumpetSkeletonSoundEvents.ENTITY_PARROT_IMITATE_TRUMPET_SKELETON);
         SpawnRestrictionAccessor.trumpetskeleton$register(TrumpetSkeletonEntityTypes.TRUMPET_SKELETON, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
         FabricDefaultAttributeRegistry.register(TrumpetSkeletonEntityTypes.TRUMPET_SKELETON, AbstractSkeletonEntity.createAbstractSkeletonAttributes());
 
+        BiomeModifier.init();
+
+    }
+
+    public static void setUpProperties(){
         Properties configuration = new Properties();
         configuration.setProperty("relativeSpawnWeight", String.valueOf(relativeSpawnWeight));
         Path configurationFile = FabricLoader.getInstance().getConfigDir().resolve("trumpet-skeleton.properties");
@@ -67,8 +73,6 @@ public class TrumpetSkeleton implements ModInitializer {
             LOGGER.error("Error processing configuration file \"" + configurationFile + "\".");
             LOGGER.error("Expected configuration value for relativeSpawnWeight to be a number, found \"" + relativeSpawnRateString + "\".");
             LOGGER.error("Using default value \"" + relativeSpawnWeight + "\" instead.");
-        }finally {
-            BiomeModifier.init();
         }
     }
 }
