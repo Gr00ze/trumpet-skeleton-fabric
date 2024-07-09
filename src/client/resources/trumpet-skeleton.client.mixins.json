@@ -3,7 +3,7 @@
 	"package": "com.grooze.trumpetskeleton.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-
+		"HeldItemRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
