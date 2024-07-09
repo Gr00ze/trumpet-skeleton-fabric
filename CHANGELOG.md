@@ -1,16 +1,20 @@
+# 1.2.1
+- Fixed issue with new naming convention for loot tables.
+- Fixed issue for trumpet animation with new animation function.
+
 # 1.2.0
-- Port 1.21
+- Updated to 1.21.
 
 # 1.1.9
-- Renabled config
+- Enabled config.
 
 # 1.1.8
-- Changed spawn system equally distributed on every biome
-- Disabled config
+- Changed spawn system equally distributed on every biome.
+- Disabled config.
 
 # 1.1.5
 - Fork
-- Updated to 1.19.2
+- Updated to 1.19.2.
 
 
 # 1.1.4
