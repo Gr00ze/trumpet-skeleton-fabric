@@ -8,7 +8,7 @@
           "type": "minecraft:item",
           "name": "minecraft:bone",
           "weight": 1,
-          "functions": [
+          "function": [
             {
               "function": "minecraft:set_count",
               "count": {
