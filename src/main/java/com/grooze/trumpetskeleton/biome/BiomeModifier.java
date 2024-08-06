@@ -2,6 +2,7 @@ package com.grooze.trumpetskeleton.biome;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 
 import static com.grooze.trumpetskeleton.TrumpetSkeleton.relativeSpawnWeight;
@@ -12,7 +13,7 @@ public class BiomeModifier {
     public static void init(){
         //this fix spawn skeleton with same weight everywhere
         BiomeModifications.addSpawn(
-                BiomeSelectors.all(),
+                BiomeSelectors.spawnsOneOf(EntityType.SKELETON),
                 SpawnGroup.MONSTER,
                 TRUMPET_SKELETON,
                 (int)Math.ceil(100 * relativeSpawnWeight),
