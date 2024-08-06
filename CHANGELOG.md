@@ -1,3 +1,5 @@
+# 1.2.2
+- Fixed an issue that caused trumpet skeleton to spawn in all biomes.
 # 1.2.1
 - Fixed issue with new naming convention for loot tables.
 - Fixed issue for trumpet animation with new animation function.
