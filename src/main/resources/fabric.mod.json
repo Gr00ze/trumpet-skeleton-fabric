@@ -22,7 +22,7 @@
 			"com.grooze.trumpetskeleton.TrumpetSkeletonClient"
 		],
 		"fabric-datagen": [
-			"com.grooze.trumpetskeleton.TrumpetSkeletonDataGenerator"
+			"com.grooze.trumpetskeleton.Generator"
 		]
 	},
 	"mixins": [
