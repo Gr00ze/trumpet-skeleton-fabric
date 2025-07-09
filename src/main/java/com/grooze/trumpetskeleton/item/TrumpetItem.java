@@ -6,10 +6,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.consume.UseAction;
+
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.UseAction;
+
+
 import net.minecraft.world.World;
 
 public class TrumpetItem extends Item {
@@ -41,9 +43,12 @@ public class TrumpetItem extends Item {
         }
     }
 
+
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
-        player.setCurrentHand(hand);
-        return new TypedActionResult<>(ActionResult.SUCCESS, player.getStackInHand(hand));
+    public ActionResult use(World world, PlayerEntity user, Hand hand) {
+        user.setCurrentHand(hand);
+        return ActionResult.SUCCESS;
     }
+
+
 }
