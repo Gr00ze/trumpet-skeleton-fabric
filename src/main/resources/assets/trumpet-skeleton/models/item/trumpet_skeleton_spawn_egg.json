@@ -1,3 +1,33 @@
+
 {
-    "parent": "item/template_spawn_egg"
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "minecraft:item/skeleton_spawn_egg",
+        "layer1": "trumpet-skeleton:item/trumpet"
+    },
+    "overrides": [],
+
+    "display": {
+        "thirdperson_righthand": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 1 ],
+            "scale": [ 0.50, 0.50, 0.50 ]
+        },
+        "thirdperson_lefthand": {
+            "rotation": [ 0, 0, 0 ],
+            "translation":  [ 0, 3, 1 ],
+            "scale": [ 0.50, 0.50, 0.50 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 90, 0 ],
+            "translation": [ 1.13, 4.2, 1.13 ],
+            "scale": [ 0.68, 0.68, 0.68 ]
+        },
+        "firstperson_lefthand": {
+            "rotation": [ 0, -90, 0 ],
+            "translation": [ 1.13, 4.2, 1.13 ],
+            "scale": [ 0.68, 0.68, 0.68 ]
+        }
+    }
 }
+
