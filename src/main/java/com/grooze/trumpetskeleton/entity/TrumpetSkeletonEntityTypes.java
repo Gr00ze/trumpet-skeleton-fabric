@@ -7,23 +7,25 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 
 import static com.grooze.trumpetskeleton.TrumpetSkeleton.MOD_ID;
 import static net.minecraft.registry.Registries.ENTITY_TYPE;
 
 public class TrumpetSkeletonEntityTypes {
-    public static final EntityType<TrumpetSkeletonEntity> TRUMPET_SKELETON =
-            register("trumpet_skeleton", EntityType.Builder.create(TrumpetSkeletonEntity::new, SpawnGroup.MONSTER)
-                    .dimensions(0.6F, 1.99F));
-
     private static <T extends Entity> EntityType<T> register(String id, EntityType.Builder<T> builder) {
         return register(Identifier.of(MOD_ID, id), builder);
     }
 
     private static <T extends Entity> EntityType<T> register(Identifier id, EntityType.Builder<T> builder) {
-        return Registry.register(ENTITY_TYPE, id, builder.build());
+        return Registry.register(ENTITY_TYPE, id, builder.build(RegistryKey.of(ENTITY_TYPE.getKey(), id)));
     }
+    public static final EntityType<TrumpetSkeletonEntity> TRUMPET_SKELETON =
+            register("trumpet_skeleton", EntityType.Builder.create(TrumpetSkeletonEntity::new, SpawnGroup.MONSTER)
+                    .dimensions(0.6F, 1.99F));
+
+
 
 
     public static void init() {
