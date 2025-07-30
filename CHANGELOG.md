@@ -1,5 +1,6 @@
 # 1.2.3
 - Trumpet Model correction
+- Tested 1.21.8
 # 1.2.2
 - Fixed an issue that caused trumpet skeleton to spawn in all biomes.
 # 1.2.1
